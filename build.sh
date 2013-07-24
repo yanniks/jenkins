@@ -15,6 +15,8 @@ cd ..
 if [ ! -d build ]
 then
   git clone git://github.com/OpenELEC/OpenELEC.tv.git build
+else
+  git pull
 fi
 cd build
 
@@ -23,9 +25,11 @@ then
   PROJECT=RPi ARCH=arm make
   check_result "build failed, aborting."
 elif [ "$PLATFORM" = "i386" ]
+then
   PROJECT=ION ARCH=i386 make release
   check_result "build failed, aborting."
 elif [ "$PLATFORM" = "x86_64" ]
+then
   PROJECT=ION ARCH=x86_64 make release
   check_result "build failed, aborting."
 else
