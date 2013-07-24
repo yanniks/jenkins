@@ -15,10 +15,11 @@ cd ..
 if [ ! -d build ]
 then
   git clone git://github.com/OpenELEC/OpenELEC.tv.git build
+  cd build
 else
+  cd build
   git pull
 fi
-cd build
 
 if [ "$PLATFORM" = "RPi" ]
 then
